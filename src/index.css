@@ -20,7 +20,7 @@ header {
 } 
 
 #scrolled\ enable {
-    border-bottom: 1px solid #2a2a2a;
+    border-bottom: 1px solid #343434;
     background: #252525;
     transition: background 0.3s;
 }

@@ -6,12 +6,17 @@ import './index.css'
 
 import Header from './page/main/Header.jsx'
 import Portfolio from './page/portfolio/index.jsx'
+import ParticlesBackground from "./page/components/ParticlesBackground.jsx";
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
         <BrowserRouter>
+        <div className='relative z-1'>
             <Header />
-                <Portfolio />
+            <Portfolio />
+        </div>
+
+        <ParticlesBackground />
         </BrowserRouter>
     </StrictMode>,
 )
