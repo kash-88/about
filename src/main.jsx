@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from "react-router-dom";
 
 import './index.css'
+import '../public/storage/css/Contact.css'
 
 import Header from './page/main/Header.jsx'
 import Portfolio from './page/portfolio/index.jsx'

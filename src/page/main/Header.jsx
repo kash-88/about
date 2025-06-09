@@ -2,7 +2,6 @@ import Link from '../components/ButtonLink.jsx'
 import { useState, useEffect, useRef } from "react";
 
 export default function Header() {
-    const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const Ref = useRef(null);
 
@@ -19,24 +18,6 @@ export default function Header() {
         return () => document.removeEventListener('mousedown', handleClick);
     }, [isMenuOpen]);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 25) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-
-        handleScroll();
-
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-
     const data = {
         title: 'KASH',
         nav: [
@@ -48,7 +29,7 @@ export default function Header() {
                 url: '/#skills'
             },{
                 title: 'GitHub',
-                url: 'https://github.com/kamish522'
+                url: 'https://github.com/kash-88'
             },{
                 title: 'Discord',
                 url: 'https://discord.gg/jrTvtRXeSn'
@@ -60,10 +41,10 @@ export default function Header() {
     }
 
     return (
-        <header id={isScrolled ? 'scrolled enable' : null} ref={Ref}>
+        <header id='scrolled enable' ref={Ref}>
             <div className="container mx-auto px-5 md:px-7 lg:px-10">
-                <div className="relative flex h-16 items-center justify-between">
-                    <a href="/" className="text-2xl font-bold flex-shrink-0">{data.title}</a>
+                <div className="relative flex h-10 md:h-14 items-center justify-between">
+                    <a href="/" className="text-1xl md:text-2xl font-bold flex-shrink-0">{data.title}</a>
 
                     <nav className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center space-x-6">
                         {
@@ -75,28 +56,43 @@ export default function Header() {
                         }
                     </nav>
 
+                    <div className="hidden md:flex items-center">
+                        <Link to='/login' key='Login' className="text-md font-medium ml-6">
+                            Login
+                        </Link>
+                    </div>
+
                     <div className="flex md:hidden">
                         <button className='cursor-pointer' onClick={() => {
-                            setIsMenuOpen(data => { const newData = !data; if (newData) setIsScrolled(true); return newData}); 
+                            setIsMenuOpen(data => {
+                                const newData = !data; return newData
+                            }); 
                         }}>
                             <img src="https://kamish.pro/storage/site/svg/menu.svg" alt="menu" className="w-25 h-20"/>
- 					    </button>
-					</div>
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            <ul id={isMenuOpen ? 'menu' : null} ref={Ref} className={
-                isMenuOpen ? 'md:hidden' : 'hidden'
-            }>{
+            <ul id={isMenuOpen ? 'menu' : null} ref={Ref} className={isMenuOpen ? 'md:hidden' : 'hidden'}>
+            
+            {
                 data.nav.map((el, id) => (
                     <li key={id}>
                         <a href={el.link} 
-                            className='flex items-center text-[20px] p-[15px] cursor-pointer hover:bg-[#2a2a2a]' 
+                            className='flex items-center px-5 text-[15px] p-[10px] cursor-pointer hover:bg-[#2a2a2a]' 
                             onClick={() => setIsMenuOpen(false)}
                         >{el.title}</a>
                     </li>
                 ))
-            }</ul>
+            }
+
+                <li>
+                    <Link to='/login' key='LoginMobile' className="flex items-center px-5 text-[15px] p-[10px] cursor-pointer hover:bg-[#2a2a2a]" onClick={() => setIsMenuOpen(false)}>
+                        Login
+                    </Link>
+                </li>
+            </ul>
         </header>
     )
 }
