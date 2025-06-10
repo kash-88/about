@@ -1,0 +1,8 @@
+{
+  "include": ["next-env.d.ts", "**/*.jsx"],
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./*"]
+    }
+  }
+}

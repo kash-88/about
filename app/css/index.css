@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+#dark {
+    --background-block: #1f1f1f;
+    --background-border: #343434;
+    --background: #121212;
+    --text: #fff;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+
+    margin-inline: auto;
+}
+
+header {
+    z-index: 50;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#menu {
+    background: var(--background-block);
+} 
+
+#scrolled\ enable {
+    border-bottom: 1px solid var(--background-border);
+    background: var(--background-block);
+    transition: background 0.3s;
+}

@@ -1,17 +1,8 @@
-import Link from '../components/ButtonLink.jsx'
-import { useEffect } from 'react';
-
 export default function PortfolioInformation() {
-  function Stars({ count, className }) {
-    const stars = '⭐'.repeat(count);
-
-    return <div className={className}>{stars}</div>;
-  }
-
-  const data = {
-    main: {
-      title: 'Hello, I\'m Kash!',
-      description: (
+    const data = {
+        main: {
+            title: 'Hello, I\'m Kash!',
+            description: (
         <>Я — Full-Stack разработчик с опытом создания сайтов и Discord-приложений. Люблю изучать что-то новое и постоянно развиваться. Основной язык — <span className="bg-gradient-to-r from-yellow-400 via-yellow-300 to-orange-300 bg-clip-text text-transparent">JavaScript</span></>
       )
     },
@@ -45,7 +36,12 @@ export default function PortfolioInformation() {
 
   return (
     <>
-<div id='Contact-Div'>
+        <div id='Contact-Div'>
+        <div id='Contact-Block-Menu' className='text-[#1c1c1c]'>
+          about
+          project
+          stack
+        </div>
             <div id='Contact-Block' className='text-[#1c1c1c]'>
                 About me
 A passionate Flutter developer with strong expertise in cross-platform apps, REST APIs, UI/UX, widgets, and state management solutions. Proven track record in delivering cutting-edge solutions, including API integration, third-party libraries, and performance optimization. Adept at debugging to ensure high-quality, responsive apps and An agile collaborator committed to staying current with industry trends.

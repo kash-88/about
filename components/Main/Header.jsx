@@ -1,4 +1,7 @@
-import Link from '../components/ButtonLink.jsx'
+"use client"
+
+import { Link } from '#components'
+
 import { useState, useEffect, useRef } from "react";
 
 export default function Header() {
@@ -49,7 +52,7 @@ export default function Header() {
                     <nav className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center space-x-6">
                         {
                             data.nav.map(item => (
-                                <Link to={item.url} key={item.title} className="text-md font-medium">
+                                <Link href={item.url} key={item.title} className="text-md font-medium">
                                     {item.title}
                                 </Link>
                             ))
@@ -57,7 +60,7 @@ export default function Header() {
                     </nav>
 
                     <div className="hidden md:flex items-center">
-                        <Link to='/login' key='Login' className="text-md font-medium ml-6">
+                        <Link href='/login' key='Login' className="text-md font-medium ml-6">
                             Login
                         </Link>
                     </div>
@@ -88,7 +91,7 @@ export default function Header() {
             }
 
                 <li>
-                    <Link to='/login' key='LoginMobile' className="flex items-center px-5 text-[15px] p-[10px] cursor-pointer hover:bg-[#2a2a2a]" onClick={() => setIsMenuOpen(false)}>
+                    <Link href='/login' key='LoginMobile' className="flex items-center px-5 text-[15px] p-[10px] cursor-pointer hover:bg-[#2a2a2a]" onClick={() => setIsMenuOpen(false)}>
                         Login
                     </Link>
                 </li>

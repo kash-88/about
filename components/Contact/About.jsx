@@ -9,7 +9,7 @@ export default function PortfolioContact() {
                     </div>
 
                     <div id='Contact-Name' className='font-bold'>Kash</div>
-                    <div id='Contact-Work'>Web Developer</div>
+                    <div id='Contact-Work'>Full-stack Developer</div>
                 </div>
 
                 <div className='px-4'>
