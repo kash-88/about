@@ -12,6 +12,12 @@
     border-radius: 25px;
 }
 
+#Contact-Info-Div {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
 #Contact-Bio {
     align-items: center;
     justify-items: center;
@@ -30,6 +36,11 @@
     padding: 20px;
 }
 
+#Contact-Block-Menu {
+    background: #303030;
+    border-radius: 10px;
+    padding: 3px 7px;
+}
 
 #Contact-Name {
     font-size: 30px;

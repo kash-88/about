@@ -1,6 +1,20 @@
 export default function PortfolioContact() {
-  return (
-    <>
+    const data = {
+        link: [
+            {
+                title: 'EMAIL',
+                icon: 'bi-envelope-at-fill',
+                href: (<a href='mailto:ipomainkra@gmail.com'>ipomainkra@gmail.com</a>)
+            },
+            {
+                title: 'LOCATION',
+                icon: 'bi-geo-alt-fill',
+                href: (<a href=''>Russia</a>)
+            }
+        ]
+    }
+
+    return (
         <div id='Contact-Div'>
             <div id='Contact-Block'>
                 <div id='Contact-Bio' className='px-8 py-8'>
@@ -17,20 +31,19 @@ export default function PortfolioContact() {
                 </div>
 
                 <div id='Contact-Info' className='px-8 py-4'>
-                    <div className='Contact-Info-Div'>
-                        <div className='Contact-Info-Icon'>...</div>
-                        <div className='Contact-Info-Title'>EMAIL</div>
-                        <div className='Contact-Info-Data'><a href='mailto:ipomainkra@gmail.com'>ipomainkra@gmail.com</a></div>
-                    </div>
-
-                    <div className='Contact-Info-Div'>
-                        <div className='Contact-Info-Icon'>...</div>
-                        <div className='Contact-Info-Title'>Location</div>
-                        <div className='Contact-Info-Data'><a href=''>Russia</a></div>
-                    </div>
+                    {
+                        data.link.map((item) => (
+                            <div key={item.title} id='Contact-Info-Div'>
+                                <div id='Contact-Info-Icon'><i className={"bi " + item.icon} /></div>
+                                <div>
+                                    <div id='Contact-Info-Title'>{item.title}</div>
+                                    <div id='Contact-Info-Data'>{item.href}</div>
+                                </div>
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
         </div>
-    </>
-  );
+    );
 }
